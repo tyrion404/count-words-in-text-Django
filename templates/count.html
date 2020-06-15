@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordCount</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: sans-serif;
+      }
+
+      .section-form {
+        width: 37em;
+        margin: 3em auto;
+        background-color: #f3f3f3;
+        padding: 2em;
+      }
+      .section-form .intro {
+        margin-bottom: 2em;
+      }
+      .btn {
+        cursor: pointer;
+        margin-bottom: 18px;
+        padding: 0.5em 2em;
+        background: #000000;
+        border: none;
+        color: #fff;
+        font-size: 1em;
+        font-weight: 400;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="section-form">
+      <div class="intro">
+        <a class="btn" href="{% url 'index' %}">Start Again</a>
+        <h3 style="margin-top: 50px;">
+          There are {{message}} words in your message.
+        </h3>
+        {% for word, totalCount in sortedWords %}
+        <span style="padding: 0 10px 0 0;">{{ word }}: {{ totalCount }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>

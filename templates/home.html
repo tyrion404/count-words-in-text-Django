@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordCount</title>
+    <link
+      rel="icon"
+      href="{% static 'favicon.ico' %}"
+      type="image"
+      sizes="16x16"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: sans-serif;
+      }
+
+      .section-form {
+        width: 37em;
+        margin: 3em auto;
+        background-color: #f3f3f3;
+        padding: 2em;
+      }
+      .section-form .intro {
+        margin-bottom: 2em;
+        text-align: center;
+      }
+
+      input[type='text'] {
+        height: 45px;
+      }
+
+      input[type='text'],
+      textarea {
+        width: 100%;
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        color: #cfcece;
+        font-weight: 300;
+        padding: 0.5em 1em;
+        border: none;
+        color: #555555;
+        font-weight: 300;
+      }
+
+      input[type='submit'] {
+        cursor: pointer;
+        margin-bottom: 18px;
+        padding: 0.5em 2em;
+        background: #000000;
+        border: none;
+        color: #fff;
+        font-size: 1em;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="section-form">
+      <form action="{% url 'count' %}">
+        <div class="intro">
+          <h3>WordCount App</h3>
+        </div>
+        <textarea
+          placeholder="Your Message"
+          name="message"
+          tabindex="5"
+          rows="10"
+        ></textarea>
+        <input type="submit" value="Count" tabindex="6" />
+      </form>
+    </div>
+  </body>
+</html>
